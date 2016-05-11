@@ -18,8 +18,8 @@ import (
 	"path"
 
 	"github.com/kless/osutil/config/shconf"
-	"github.com/kless/osutil/user"
 	"github.com/kless/osutil/file"
+	"github.com/kless/osutil/user"
 )
 
 var _IS_ROOT bool

@@ -34,7 +34,7 @@ var GID, SYS_GID int
 func init() {
 	err := osutil.MustbeRoot()
 	if err != nil {
-		goutil.Fatalln(err)
+		goutil.Fatalf("%s", err)
 	}
 
 	if _USER_FILE, err = file.CopytoTemp(_USER_FILE, "test-user_"); err != nil {
@@ -54,7 +54,7 @@ func init() {
 
 _error:
 	removeTempFiles()
-	goutil.Fatal(err)
+	goutil.Fatalf("%s", err)
 }
 
 func removeTempFiles() {
@@ -62,7 +62,7 @@ func removeTempFiles() {
 
 	for _, f := range files {
 		if err := os.Remove(f); err != nil {
-			goutil.Errorln(err)
+			goutil.Errorf("%s", err)
 		}
 	}
 }
